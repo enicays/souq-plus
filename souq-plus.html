@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DigitalyHub — اشتراكاتك بأسعار جزائرية</title>
+<meta name="description" content="DigitalyHub — اشترك في Snapchat+، Netflix، Gemini Pro، Spotify وChatGPT Plus بالدينار الجزائري عبر BaridiMob أو CCP. توصيل فوري في أقل من 15 دقيقة، بلا بطاقة بنكية عالمية.">
+<!-- Canonical & hreflang (single-page, language toggled via JS) -->
+<link rel="canonical" href="https://YOUR_DOMAIN/">
+<link rel="alternate" hreflang="ar-DZ" href="https://YOUR_DOMAIN/">
+<link rel="alternate" hreflang="fr-DZ" href="https://YOUR_DOMAIN/">
+<link rel="alternate" hreflang="x-default" href="https://YOUR_DOMAIN/">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DigitalyHub">
+<meta property="og:url" content="https://YOUR_DOMAIN/">
+<meta property="og:title" content="DigitalyHub — اشتراكاتك بأسعار جزائرية">
+<meta property="og:description" content="اشترك في Snapchat+، Netflix، Gemini Pro، Spotify وChatGPT Plus بالدينار عبر BaridiMob أو CCP. توصيل فوري، بلا بطاقة بنكية عالمية.">
+<meta property="og:image" content="https://YOUR_DOMAIN/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DigitalyHub — اشتراكات رقمية بالدينار الجزائري">
+<meta property="og:locale" content="ar_DZ">
+<meta property="og:locale:alternate" content="fr_DZ">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DigitalyHub — اشتراكاتك بأسعار جزائرية">
+<meta name="twitter:description" content="اشترك في Snapchat+، Netflix، Gemini Pro، Spotify وChatGPT Plus بالدينار عبر BaridiMob أو CCP. توصيل فوري، بلا بطاقة بنكية عالمية.">
+<meta name="twitter:image" content="https://YOUR_DOMAIN/og-image.png">
+<meta name="twitter:image:alt" content="DigitalyHub — اشتراكات رقمية بالدينار الجزائري">
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="alternate icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.svg">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#171320;
+    --bg-2:#1d1829;
+    --surface:#241f33;
+    --surface-alt:#2b2440;
+    --text:#f3efe8;
+    --text-muted:#a79fb5;
+    --accent:#dba53f;
+    --accent-soft:#f0c877;
+    --accent-2:#3fa796;
+    --border:rgba(243,239,232,0.12);
+    --radius-s:10px;
+    --radius-m:16px;
+    --radius-l:28px;
+    --shadow:0 20px 50px -25px rgba(0,0,0,0.6);
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  html{scroll-padding-top:env(safe-area-inset-top,0px);}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:"Cairo",system-ui,sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px;}
+  section{padding:88px 0;}
+  @media (max-width:640px){section{padding:56px 0;}}
+
+  /* language toggling */
+  [data-ar],[data-fr]{display:none;}
+  body.lang-ar [data-ar]{display:inline;}
+  body.lang-ar [data-ar-b]{display:block;}
+  body.lang-fr [data-fr]{display:inline;}
+  body.lang-fr [data-fr-b]{display:block;}
+
+  h1,h2,h3{font-weight:800;letter-spacing:-0.01em;line-height:1.15;}
+  .eyebrow{color:var(--accent-soft);font-weight:700;font-size:0.95rem;}
+  .muted{color:var(--text-muted);}
+  .num{font-family:"Fraunces",serif;font-variant-numeric:tabular-nums;}
+
+  /* header */
+  header{
+    position:sticky;top:env(safe-area-inset-top,0px);
+    z-index:50;
+    background:rgba(23,19,32,0.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px;}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.3rem;}
+  .brand-mark{
+    width:34px;height:34px;border-radius:9px;
+    background:linear-gradient(135deg,var(--accent),var(--accent-2));
+    display:flex;align-items:center;justify-content:center;
+    font-family:"Fraunces",serif;font-weight:600;color:#171320;font-size:1.05rem;
+  }
+  .nav-actions{display:flex;align-items:center;gap:12px;}
+  .lang-toggle{
+    display:flex;border:1px solid var(--border);border-radius:999px;overflow:hidden;
+  }
+  .lang-toggle button{
+    border:none;background:transparent;color:var(--text-muted);
+    padding:8px 14px;font:inherit;font-weight:700;font-size:0.85rem;cursor:pointer;
+  }
+  .lang-toggle button.active{background:var(--accent);color:#171320;}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:13px 22px;border-radius:999px;font-weight:700;font-size:0.95rem;
+    border:1px solid transparent;cursor:pointer;text-decoration:none;
+    transition:transform .15s ease;
+  }
+  .btn:active{transform:scale(0.97);}
+  .btn-primary{background:var(--accent);color:#181120;}
+  .btn-ghost{background:transparent;border-color:var(--border);color:var(--text);}
+  .btn-block{width:100%;}
+  @media (max-width:640px){.nav .btn-primary-desktop{display:none;}}
+
+  /* hero */
+  .hero{padding-top:64px;position:relative;}
+  .hero-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:center;}
+  @media (max-width:900px){.hero-grid{grid-template-columns:1fr;}}
+  .hero h1{font-size:clamp(2.1rem,4.6vw,3.4rem);}
+  .hero p.lead{margin-top:18px;font-size:1.15rem;color:var(--text-muted);max-width:46ch;}
+  .hero-cta{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap;}
+  .trust-row{display:flex;gap:26px;margin-top:40px;flex-wrap:wrap;}
+  .trust-item{display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-muted);}
+  .trust-dot{width:7px;height:7px;border-radius:50%;background:var(--accent-2);}
+
+  .badge-stack{position:relative;height:420px;}
+  .p-badge{
+    position:absolute;width:180px;border-radius:var(--radius-m);
+    background:var(--surface);border:1px solid var(--border);
+    padding:18px;box-shadow:var(--shadow);
+  }
+  .p-badge .mono{
+    width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+    font-weight:800;font-size:1rem;color:#171320;margin-bottom:12px;
+  }
+  .p-badge .pname{font-weight:700;font-size:0.95rem;}
+  .p-badge .pprice{font-size:0.8rem;color:var(--text-muted);margin-top:4px;}
+  .b1{top:0;inset-inline-start:10%;transform:rotate(-6deg);}
+  .b2{top:120px;inset-inline-end:2%;transform:rotate(4deg);}
+  .b3{top:260px;inset-inline-start:22%;transform:rotate(-3deg);}
+  @media (max-width:900px){.badge-stack{height:300px;margin-top:20px;}
+    .p-badge{width:150px;padding:14px;}
+    .b1{inset-inline-start:0;top:0;}
+    .b2{inset-inline-end:0;top:90px;}
+    .b3{inset-inline-start:30%;top:200px;}
+  }
+
+  /* why */
+  .why{background:var(--bg-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+  .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start;}
+  @media (max-width:800px){.why-grid{grid-template-columns:1fr;}}
+  .stat-row{display:flex;gap:36px;margin-top:28px;flex-wrap:wrap;}
+  .stat .num{font-size:2.1rem;color:var(--accent-soft);display:block;}
+  .stat .label{font-size:0.85rem;color:var(--text-muted);}
+
+  /* products */
+  .section-head{max-width:640px;margin-bottom:44px;}
+  .section-head h2{font-size:clamp(1.7rem,3.2vw,2.3rem);margin-top:10px;}
+  .products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  @media (max-width:900px){.products-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:560px){.products-grid{grid-template-columns:1fr;}}
+  .product-card{
+    background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-m);
+    padding:26px;display:flex;flex-direction:column;gap:14px;
+  }
+  .product-card .mono{
+    width:48px;height:48px;border-radius:13px;display:flex;align-items:center;justify-content:center;
+    font-weight:800;color:#171320;
+  }
+  .product-card h3{font-size:1.15rem;}
+  .product-card .desc{color:var(--text-muted);font-size:0.92rem;flex-grow:1;}
+  .product-card .price-row{display:flex;align-items:baseline;justify-content:space-between;
+    border-top:1px solid var(--border);padding-top:14px;}
+  .product-card .price{font-family:"Fraunces",serif;font-size:1.3rem;font-weight:600;}
+  .product-card .period{font-size:0.78rem;color:var(--text-muted);}
+  .price-note{margin-top:22px;font-size:0.85rem;color:var(--text-muted);}
+
+  /* how it works */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  @media (max-width:800px){.steps{grid-template-columns:1fr;}}
+  .step{position:relative;padding-inline-start:0;}
+  .step .step-num{
+    font-family:"Fraunces",serif;font-size:2.6rem;color:var(--accent);opacity:0.9;line-height:1;
+  }
+  .step h3{margin-top:10px;font-size:1.1rem;}
+  .step p{color:var(--text-muted);margin-top:6px;font-size:0.95rem;}
+
+  /* payment */
+  .payment{background:var(--bg-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+  .pay-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  @media (max-width:700px){.pay-grid{grid-template-columns:1fr;}}
+  .pay-card{
+    background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-m);padding:26px;
+  }
+  .pay-card h3{font-size:1.1rem;margin-bottom:6px;}
+  .pay-num{
+    display:flex;align-items:center;justify-content:space-between;
+    background:var(--surface-alt);border-radius:var(--radius-s);padding:12px 16px;margin-top:14px;
+    font-family:"Fraunces",serif;font-size:1.05rem;letter-spacing:0.02em;
+  }
+  .copy-btn{
+    border:1px solid var(--border);background:transparent;color:var(--accent-soft);
+    padding:6px 12px;border-radius:999px;font-size:0.78rem;font-weight:700;cursor:pointer;font-family:"Cairo",sans-serif;
+  }
+
+  /* testimonials */
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  @media (max-width:800px){.testi-grid{grid-template-columns:1fr;}}
+  .testi-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-m);padding:24px;}
+  .testi-card .quote{font-size:0.95rem;color:var(--text);}
+  .testi-card .who{margin-top:14px;font-size:0.85rem;color:var(--text-muted);}
+  .stars{color:var(--accent-soft);letter-spacing:2px;margin-bottom:10px;}
+
+  /* faq */
+  .faq-list{max-width:760px;}
+  details{
+    border-bottom:1px solid var(--border);padding:20px 0;
+  }
+  summary{
+    cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary .icon{
+    flex-shrink:0;width:22px;height:22px;border-radius:50%;border:1px solid var(--border);
+    display:flex;align-items:center;justify-content:center;font-size:0.9rem;transition:transform .2s ease;
+  }
+  details[open] summary .icon{transform:rotate(45deg);}
+  details p{margin-top:12px;color:var(--text-muted);max-width:64ch;}
+
+  /* final cta */
+  .final-cta{
+    background:linear-gradient(135deg,var(--surface),var(--surface-alt));
+    border:1px solid var(--border);border-radius:var(--radius-l);
+    padding:56px 40px;text-align:center;
+  }
+  .final-cta h2{font-size:clamp(1.6rem,3.4vw,2.2rem);}
+  .final-cta p{color:var(--text-muted);margin-top:10px;}
+  .final-cta .btn{margin-top:26px;}
+
+  footer{border-top:1px solid var(--border);padding:44px 0 calc(44px + env(safe-area-inset-bottom,0px));}
+  .foot-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;align-items:flex-start;}
+  .disclaimer{font-size:0.78rem;color:var(--text-muted);max-width:70ch;margin-top:20px;line-height:1.7;}
+  .foot-links{display:flex;gap:18px;font-size:0.9rem;color:var(--text-muted);flex-wrap:wrap;}
+
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;}}
+
+  /* floating mobile CTA */
+  .fab{
+    display:none;
+    position:fixed;
+    bottom:calc(20px + env(safe-area-inset-bottom,0px));
+    inset-inline-end:20px;
+    z-index:100;
+    background:var(--accent);
+    color:#181120;
+    font-weight:700;font-size:0.95rem;
+    padding:14px 22px;
+    border-radius:999px;
+    text-decoration:none;
+    box-shadow:0 8px 28px -6px rgba(219,165,63,0.55);
+    transition:transform .2s ease, opacity .25s ease, box-shadow .2s ease;
+    opacity:0;transform:translateY(16px);pointer-events:none;
+    align-items:center;gap:8px;
+  }
+  .fab.visible{opacity:1;transform:translateY(0);pointer-events:auto;}
+  .fab:active{transform:scale(0.96);}
+  @media (max-width:640px){.fab{display:flex;}}
+</style>
+
+</head>
+<body class="lang-ar">
+
+<!-- floating mobile CTA -->
+<a id="fab" href="https://wa.me/213000000000" class="fab" target="_blank" rel="noopener noreferrer" aria-label="اطلب عبر واتساب">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span data-ar>اطلب الآن</span><span data-fr>Commander</span>
+</a>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <img src="logo.png" alt="DigitalyHub logo" style="height:38px;width:38px;border-radius:50%;object-fit:contain;">
+      DigitalyHub
+    </div>
+    <div class="nav-actions">
+      <div class="lang-toggle">
+        <button type="button" id="btn-ar" class="active" onclick="setLang('ar')">AR</button>
+        <button type="button" id="btn-fr" onclick="setLang('fr')">FR</button>
+      </div>
+      <a href="https://wa.me/213000000000" class="btn btn-primary btn-primary-desktop" target="_blank" rel="noopener noreferrer">
+        <span data-ar>اطلب الآن</span><span data-fr>Commander</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow" data-ar>اشتراكات رقمية — بأسعار جزائرية</p>
+      <p class="eyebrow" data-fr>Abonnements numériques — au prix algérien</p>
+      <h1>
+        <span data-ar-b>Snapchat+، Gemini Pro، Netflix… كل اشتراكاتك في مكان وحد</span>
+        <span data-fr-b>Snapchat+, Gemini Pro, Netflix… tous vos abonnements au même endroit</span>
+      </h1>
+      <p class="lead" data-ar-b>تدفع بالدينار عبر BaridiMob أو CCP، وتوصلك اشتراكاتك المفضلة خلال دقائق، بلا بطاقة بنكية عالمية وبلا تعقيد.</p>
+      <p class="lead" data-fr-b>Payez en dinars via BaridiMob ou CCP, recevez vos abonnements préférés en quelques minutes — sans carte bancaire internationale, sans complications.</p>
+      <div class="hero-cta">
+        <a href="https://wa.me/213000000000" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+          <span data-ar>اطلب عبر واتساب</span><span data-fr>Commander sur WhatsApp</span>
+        </a>
+        <a href="#products" class="btn btn-ghost">
+          <span data-ar>شوف الأسعار</span><span data-fr>Voir les prix</span>
+        </a>
+      </div>
+      <div class="trust-row">
+        <div class="trust-item"><span class="trust-dot"></span><span data-ar>توصيل فوري</span><span data-fr>Livraison rapide</span></div>
+        <div class="trust-item"><span class="trust-dot"></span><span data-ar>دفع محلي آمن</span><span data-fr>Paiement local sécurisé</span></div>
+        <div class="trust-item"><span class="trust-dot"></span><span data-ar>دعم يومي 7/7</span><span data-fr>Support 7j/7</span></div>
+      </div>
+    </div>
+
+    <div class="badge-stack" aria-hidden="true">
+      <div class="p-badge b1">
+        <div class="mono" style="background:#FFFC00;">S+</div>
+        <div class="pname">Snapchat+</div>
+        <div class="pprice"><span data-ar>يبدأ من 1200 دج</span><span data-fr>Dès 1200 DA</span></div>
+      </div>
+      <div class="p-badge b2">
+        <div class="mono" style="background:linear-gradient(135deg,#4285F4,#9B72CB);">G</div>
+        <div class="pname">Gemini Pro</div>
+        <div class="pprice"><span data-ar>يبدأ من 2500 دج</span><span data-fr>Dès 2500 DA</span></div>
+      </div>
+      <div class="p-badge b3">
+        <div class="mono" style="background:#E50914;">N</div>
+        <div class="pname">Netflix Premium</div>
+        <div class="pprice"><span data-ar>يبدأ من 1800 دج</span><span data-fr>Dès 1800 DA</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap why-grid">
+    <div>
+      <p class="eyebrow" data-ar>ليش DigitalyHub</p>
+      <p class="eyebrow" data-fr>Pourquoi DigitalyHub</p>
+      <h2 style="margin-top:10px;font-size:1.8rem;">
+        <span data-ar-b>الاشتراك بالدولار معقّد، حنا نبسّطوه بالدينار</span>
+        <span data-fr-b>S'abonner en devises étrangères est compliqué. On le simplifie en dinars</span>
+      </h2>
+    </div>
+    <div>
+      <p class="muted" data-ar-b>ماشي كل واحد عندو بطاقة بنكية عالمية، وأسعار السوق الرسمية غاليّة بالنسبة لجيبنا. DigitalyHub يوصلك نفس الاشتراكات، بدفع محلي بسيط وأسعار مدروسة للسوق الجزائري.</p>
+      <p class="muted" data-fr-b>Tout le monde n'a pas de carte bancaire internationale, et les tarifs officiels sont chers pour le marché local. DigitalyHub vous donne accès aux mêmes abonnements, avec un paiement local simple et des prix pensés pour l'Algérie.</p>
+      <div class="stat-row">
+        <div class="stat"><span class="num">&lt;15<span style="font-size:1rem;">min</span></span><span class="label" data-ar>وقت التوصيل</span><span class="label" data-fr>Délai de livraison</span></div>
+        <div class="stat"><span class="num">5</span><span class="label" data-ar>منصات مدعومة</span><span class="label" data-fr>Plateformes disponibles</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="products">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow" data-ar>الاشتراكات المتوفرة</p>
+      <p class="eyebrow" data-fr>Abonnements disponibles</p>
+      <h2 data-ar-b>اختار الاشتراك يلي يعجبك</h2>
+      <h2 data-fr-b>Choisissez l'abonnement qui vous convient</h2>
+    </div>
+
+    <div class="products-grid">
+
+      <div class="product-card">
+        <div class="mono" style="background:#FFFC00;">S+</div>
+        <h3>Snapchat+</h3>
+        <p class="desc" data-ar>أدوات حصرية، أيقونة مميزة، وأولوية في المشاهدة.</p>
+        <p class="desc" data-fr>Fonctions exclusives, badge spécial et priorité de visionnage.</p>
+        <div class="price-row">
+          <span class="price num">1200 <span style="font-size:0.85rem;">DA</span></span>
+          <span class="period"><span data-ar>شهر واحد</span><span data-fr>1 mois</span></span>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="mono" style="background:linear-gradient(135deg,#4285F4,#9B72CB);">G</div>
+        <h3>Gemini Pro</h3>
+        <p class="desc" data-ar>أقوى نموذج ذكاء اصطناعي من Google، بدون حدود يومية.</p>
+        <p class="desc" data-fr>Le modèle IA le plus puissant de Google, sans limite quotidienne.</p>
+        <div class="price-row">
+          <span class="price num">2500 <span style="font-size:0.85rem;">DA</span></span>
+          <span class="period"><span data-ar>شهر واحد</span><span data-fr>1 mois</span></span>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="mono" style="background:#E50914;">N</div>
+        <h3>Netflix Premium</h3>
+        <p class="desc" data-ar>أفلام ومسلسلات بجودة 4K، على عدة شاشات.</p>
+        <p class="desc" data-fr>Films et séries en 4K, sur plusieurs écrans.</p>
+        <div class="price-row">
+          <span class="price num">1800 <span style="font-size:0.85rem;">DA</span></span>
+          <span class="period"><span data-ar>شهر واحد</span><span data-fr>1 mois</span></span>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="mono" style="background:#1DB954;">S</div>
+        <h3>Spotify Premium</h3>
+        <p class="desc" data-ar>موسيقى بدون إعلانات وتحميل بلا انترنت.</p>
+        <p class="desc" data-fr>Musique sans publicité et écoute hors-ligne.</p>
+        <div class="price-row">
+          <span class="price num">1000 <span style="font-size:0.85rem;">DA</span></span>
+          <span class="period"><span data-ar>شهر واحد</span><span data-fr>1 mois</span></span>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="mono" style="background:#10A37F;">AI</div>
+        <h3>ChatGPT Plus</h3>
+        <p class="desc" data-ar>أقوى مساعد ذكاء اصطناعي، أولوية في السرعة والنماذج الجديدة.</p>
+        <p class="desc" data-fr>L'assistant IA le plus performant, accès prioritaire aux nouveaux modèles.</p>
+        <div class="price-row">
+          <span class="price num">3000 <span style="font-size:0.85rem;">DA</span></span>
+          <span class="period"><span data-ar>شهر واحد</span><span data-fr>1 mois</span></span>
+        </div>
+      </div>
+
+      <div class="product-card" style="justify-content:center;align-items:center;text-align:center;border-style:dashed;">
+        <p class="desc" data-ar>ما لقيتيش الاشتراك يلي تحبو؟ راسلنا وحنا نشوفولك.</p>
+        <p class="desc" data-fr>Vous ne trouvez pas l'abonnement que vous cherchez ? Contactez-nous.</p>
+        <a href="https://wa.me/213000000000" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">
+          <span data-ar>راسلنا</span><span data-fr>Nous écrire</span>
+        </a>
+      </div>
+
+    </div>
+    <p class="price-note" data-ar>* الأسعار تقديرية، تقدر تبدّلها حسب التعريفة الحالية.</p>
+    <p class="price-note" data-fr>* Prix indicatifs — à ajuster selon vos tarifs actuels.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow" data-ar>كيفاش تخدم</p>
+      <p class="eyebrow" data-fr>Comment ça marche</p>
+      <h2 data-ar-b>3 خطوات وتستلم اشتراكك</h2>
+      <h2 data-fr-b>3 étapes pour recevoir votre abonnement</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="step-num">01</span>
+        <h3 data-ar>اختار وطلب</h3><h3 data-fr>Choisissez et commandez</h3>
+        <p data-ar>اختار الاشتراك يلي يعجبك وابعتلنا طلبك عبر واتساب.</p>
+        <p data-fr>Sélectionnez l'abonnement souhaité et envoyez votre commande sur WhatsApp.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">02</span>
+        <h3 data-ar>ادفع محلياً</h3><h3 data-fr>Payez localement</h3>
+        <p data-ar>ادفع عبر BaridiMob أو حساب CCP، وابعتلنا صورة وصل الدفع.</p>
+        <p data-fr>Payez via BaridiMob ou votre compte CCP, puis envoyez-nous la preuve de paiement.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">03</span>
+        <h3 data-ar>استلم فوراً</h3><h3 data-fr>Recevez instantanément</h3>
+        <p data-ar>توصلك تفاصيل اشتراكك خلال دقائق قليلة، جاهز للاستعمال.</p>
+        <p data-fr>Les détails de votre abonnement arrivent en quelques minutes, prêts à l'emploi.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="payment">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow" data-ar>طرق الدفع</p>
+      <p class="eyebrow" data-fr>Moyens de paiement</p>
+      <h2 data-ar-b>ادفع بالطريقة يلي تريحك</h2>
+      <h2 data-fr-b>Payez de la façon qui vous convient</h2>
+    </div>
+    <div class="pay-grid">
+      <div class="pay-card">
+        <h3>BaridiMob</h3>
+        <p class="muted" data-ar>حوّل مباشرة عبر تطبيق BaridiMob لهذا الرقم:</p>
+        <p class="muted" data-fr>Transférez directement via l'application BaridiMob à ce numéro :</p>
+        <div class="pay-num">
+          <span>00 0000 0000 0000 00 00</span>
+          <button class="copy-btn" onclick="copyText('00 0000 0000 0000 00 00', this)" data-ar>نسخ</button>
+          <button class="copy-btn" onclick="copyText('00 0000 0000 0000 00 00', this)" data-fr>Copier</button>
+        </div>
+      </div>
+      <div class="pay-card">
+        <h3>CCP</h3>
+        <p class="muted" data-ar>حوّل عبر بريد الجزائر إلى حساب CCP رقم:</p>
+        <p class="muted" data-fr>Virement via Algérie Poste vers le compte CCP n° :</p>
+        <div class="pay-num">
+          <span>0000000 <span style="font-size:0.7em;">Clé 00</span></span>
+          <button class="copy-btn" onclick="copyText('0000000', this)" data-ar>نسخ</button>
+          <button class="copy-btn" onclick="copyText('0000000', this)" data-fr>Copier</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow" data-ar>آراء العملاء</p>
+      <p class="eyebrow" data-fr>Avis clients</p>
+      <h2 data-ar-b>واش قالوا فينا</h2>
+      <h2 data-fr-b>Ce qu'ils en pensent</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote" data-ar>[أضف هنا تقييم حقيقي من عميل — مثال: توصلت باشتراكي في أقل من ربع ساعة]</p>
+        <p class="quote" data-fr>[Ajoutez ici un vrai avis client — ex : j'ai reçu mon abonnement en moins de 15 minutes]</p>
+        <p class="who" data-ar>— اسم العميل، الولاية</p>
+        <p class="who" data-fr>— Nom du client, wilaya</p>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote" data-ar>[أضف هنا تقييم حقيقي من عميل]</p>
+        <p class="quote" data-fr>[Ajoutez ici un vrai avis client]</p>
+        <p class="who" data-ar>— اسم العميل، الولاية</p>
+        <p class="who" data-fr>— Nom du client, wilaya</p>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote" data-ar>[أضف هنا تقييم حقيقي من عميل]</p>
+        <p class="quote" data-fr>[Ajoutez ici un vrai avis client]</p>
+        <p class="who" data-ar>— اسم العميل، الولاية</p>
+        <p class="who" data-fr>— Nom du client, wilaya</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow" data-ar>أسئلة شائعة</p>
+      <p class="eyebrow" data-fr>Questions fréquentes</p>
+      <h2 data-ar-b>عندك سؤال؟</h2>
+      <h2 data-fr-b>Des questions ?</h2>
+    </div>
+    <div class="faq-list">
+      <details open>
+        <summary><span><span data-ar>كيفاش الأسعار أرخص من السعر الرسمي؟</span><span data-fr>Pourquoi les prix sont-ils moins chers que le tarif officiel ?</span></span><span class="icon">+</span></summary>
+        <p data-ar>حنا نوفرولكم طرق دفع واشتراك محلية تفادي رسوم التحويل الدولي، وهذا يخلينا نقدرو نعطيوكم أسعار مدروسة للسوق الجزائري.</p>
+        <p data-fr>Nous utilisons des méthodes d'abonnement et de paiement locales qui évitent les frais de change internationaux, ce qui nous permet de proposer des prix adaptés au marché algérien.</p>
+      </details>
+      <details>
+        <summary><span><span data-ar>شحال ياخذ الوقت باش نستلم اشتراكي؟</span><span data-fr>Combien de temps pour recevoir mon abonnement ?</span></span><span class="icon">+</span></summary>
+        <p data-ar>غالبية الطلبات توصل خلال 15 دقيقة من تأكيد الدفع، خلال أوقات العمل.</p>
+        <p data-fr>La plupart des commandes sont livrées en 15 minutes après confirmation du paiement, pendant les heures d'ouverture.</p>
+      </details>
+      <details>
+        <summary><span><span data-ar>واش كاين ضمان إذا وقعت مشكلة؟</span><span data-fr>Y a-t-il une garantie en cas de problème ?</span></span><span class="icon">+</span></summary>
+        <p data-ar>إيه، إذا واجهت أي مشكلة في التفعيل نعوضولك أو نرجعولك فلوسك حسب الحالة.</p>
+        <p data-fr>Oui, en cas de problème d'activation, nous remplaçons l'abonnement ou remboursons selon le cas.</p>
+      </details>
+      <details>
+        <summary><span><span data-ar>واش نقدر نجدد الاشتراك بعد ما يخلص؟</span><span data-fr>Puis-je renouveler après l'expiration ?</span></span><span class="icon">+</span></summary>
+        <p data-ar>واه بالطبع، تقدر تجدد بنفس الطريقة قبل أو بعد ما يخلص اشتراكك.</p>
+        <p data-fr>Bien sûr, vous pouvez renouveler de la même façon avant ou après l'expiration.</p>
+      </details>
+      <details>
+        <summary><span><span data-ar>واش طرق الدفع المتوفرة؟</span><span data-fr>Quels moyens de paiement acceptez-vous ?</span></span><span class="icon">+</span></summary>
+        <p data-ar>نقبلو BaridiMob وتحويل CCP حالياً.</p>
+        <p data-fr>Nous acceptons actuellement BaridiMob et le virement CCP.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="final-cta">
+      <h2 data-ar-b>واجدين نديرو اشتراكك الليلة؟</h2>
+      <h2 data-fr-b>Prêt à activer votre abonnement aujourd'hui ?</h2>
+      <p data-ar>راسلنا عبر واتساب ونحضرولك اشتراكك في دقائق.</p>
+      <p data-fr>Contactez-nous sur WhatsApp et recevez votre abonnement en quelques minutes.</p>
+      <a href="https://wa.me/213000000000" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+        <span data-ar>اطلب عبر واتساب</span><span data-fr>Commander sur WhatsApp</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="brand"><img src="logo.png" alt="DigitalyHub logo" style="height:32px;width:32px;border-radius:50%;object-fit:contain;">DigitalyHub</div>
+      <div class="foot-links">
+        <a href="https://wa.me/213000000000" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a href="#" data-ar>إنستغرام</a><a href="#" data-fr>Instagram</a>
+        <a href="#" data-ar>تيليغرام</a><a href="#" data-fr>Telegram</a>
+      </div>
+    </div>
+    <p class="disclaimer" data-ar>DigitalyHub منصة مستقلة لإعادة بيع الاشتراكات الرقمية وليست شريكاً رسمياً أو تابعة لـ Snap Inc.‏ أو Google أو Netflix أو Spotify أو OpenAI. كل العلامات التجارية المذكورة ملك لأصحابها.</p>
+    <p class="disclaimer" data-fr>DigitalyHub est une plateforme indépendante de revente d'abonnements numériques, non affiliée officiellement à Snap Inc., Google, Netflix, Spotify ou OpenAI. Toutes les marques citées appartiennent à leurs propriétaires respectifs.</p>
+  </div>
+</footer>
+
+<script>
+  function setLang(lang){
+    document.body.className = 'lang-' + lang;
+    document.documentElement.lang = lang;
+    document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+    document.getElementById('btn-ar').classList.toggle('active', lang === 'ar');
+    document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
+  }
+
+  /* floating CTA — show after scroll, hide near final CTA section */
+  (function(){
+    var fab = document.getElementById('fab');
+    var finalCta = document.querySelector('.final-cta');
+    var nearEnd = false;
+
+    if(finalCta){
+      var obs = new IntersectionObserver(function(entries){
+        nearEnd = entries[0].isIntersecting;
+        update();
+      }, {threshold: 0.1});
+      obs.observe(finalCta);
+    }
+
+    function update(){
+      var scrolled = window.scrollY > 300;
+      if(scrolled && !nearEnd){ fab.classList.add('visible'); }
+      else { fab.classList.remove('visible'); }
+    }
+
+    window.addEventListener('scroll', update, {passive:true});
+  })();
+
+  async function copyText(text, btn){
+    const original = btn.textContent;
+    try{
+      await navigator.clipboard.writeText(text);
+      btn.textContent = (document.documentElement.lang === 'ar') ? 'تم النسخ' : 'Copié';
+    }catch(e){
+      btn.textContent = (document.documentElement.lang === 'ar') ? 'انسخ يدوياً' : 'Copie manuelle';
+    }
+    setTimeout(()=>{ btn.textContent = original; }, 1800);
+  }
+</script>
+</body>
+</html>
