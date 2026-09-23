@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DigitalyHub - لوحة التحكم</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <!-- Login Section -->
+  <div id="login-section" class="container" style="max-width: 400px; margin-top: 100px;">
+    <div class="card">
+      <h2 style="text-align: center; margin-bottom: 24px;">تسجيل الدخول</h2>
+      <form id="login-form">
+        <div class="form-group">
+          <label>البريد الإلكتروني</label>
+          <input type="email" id="login-email" required dir="ltr" style="text-align: left;">
+        </div>
+        <div class="form-group">
+          <label>كلمة المرور</label>
+          <input type="password" id="login-password" required dir="ltr" style="text-align: left;">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">دخول</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Dashboard Section -->
+  <div id="dashboard-section" style="display: none;">
+    <header class="admin-header">
+      <div class="wrap" style="display: flex; justify-content: space-between; align-items: center;">
+        <div class="brand">DigitalyHub Admin</div>
+        <button id="btn-logout" class="btn btn-ghost" style="padding: 6px 12px; font-size: 0.85rem;">تسجيل الخروج</button>
+      </div>
+    </header>
+    
+    <div class="wrap admin-grid">
+      
+      <!-- Products Management -->
+      <div class="card">
+        <div class="card-header">
+          <h2>المنتجات (الاشتراكات)</h2>
+          <button id="btn-new-product" class="btn btn-primary" style="padding: 6px 12px; font-size: 0.85rem;">+ إضافة منتج</button>
+        </div>
+        <div class="table-responsive">
+          <table id="products-table">
+            <thead>
+              <tr>
+                <th>الاسم</th>
+                <th>السعر (دج)</th>
+                <th>الحالة</th>
+                <th>إجراءات</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Dynamic Products -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Orders View -->
+      <div class="card">
+        <div class="card-header">
+          <h2>أحدث الطلبات</h2>
+          <div style="display: flex; gap: 8px;">
+            <button class="btn btn-small filter-btn active" data-filter="all" onclick="filterOrders('all', this)">الكل</button>
+            <button class="btn btn-small filter-btn" data-filter="pending" onclick="filterOrders('pending', this)">قيد الانتظار</button>
+            <button class="btn btn-small filter-btn" data-filter="confirmed" onclick="filterOrders('confirmed', this)">مؤكد</button>
+            <button class="btn btn-small filter-btn" data-filter="cancelled" onclick="filterOrders('cancelled', this)">ملغي</button>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table id="orders-table">
+            <thead>
+              <tr>
+                <th>التاريخ</th>
+                <th>الزبون</th>
+                <th>المنتج</th>
+                <th>رقم الهاتف</th>
+                <th>الحالة</th>
+                <th>إجراءات</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Dynamic Orders -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Order Details Modal -->
+  <div id="order-modal" class="modal">
+    <div class="modal-content card" style="max-width: 550px;">
+      <h3 style="margin-bottom: 20px;">تفاصيل الطلب</h3>
+      <input type="hidden" id="order-id">
+      <div class="form-group">
+        <label>اسم الزبون</label>
+        <input type="text" id="order-name" readonly style="opacity: 0.8;">
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+        <div class="form-group">
+          <label>الولاية</label>
+          <input type="text" id="order-wilaya" readonly style="opacity: 0.8;">
+        </div>
+        <div class="form-group">
+          <label>رقم الهاتف</label>
+          <input type="text" id="order-phone" readonly dir="ltr" style="text-align: left; opacity: 0.8;">
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+        <div class="form-group">
+          <label>المنتج</label>
+          <input type="text" id="order-product" readonly style="opacity: 0.8;">
+        </div>
+        <div class="form-group">
+          <label>السعر</label>
+          <input type="text" id="order-price" readonly dir="ltr" style="text-align: left; opacity: 0.8;">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>الحالة</label>
+        <select id="order-status" style="width: 100%; padding: 12px; background: var(--bg-2); border: 1px solid var(--border); border-radius: 8px; color: var(--text);">
+          <option value="pending">قيد الانتظار</option>
+          <option value="confirmed">مؤكد ✅</option>
+          <option value="cancelled">ملغي ❌</option>
+        </select>
+      </div>
+      <div style="display: flex; gap: 10px; margin-top: 24px;">
+        <button class="btn btn-primary" style="flex: 1; background: #10A37F; border-color: #10A37F;" onclick="updateOrderStatus('confirmed')">✅ تأكيد الطلب</button>
+        <button class="btn btn-primary" style="flex: 1;" onclick="saveOrderStatus()">💾 حفظ التغييرات</button>
+      </div>
+      <div style="display: flex; gap: 10px; margin-top: 10px;">
+        <button class="btn btn-danger" style="flex: 1;" onclick="deleteOrder()">🗑️ حذف الطلب</button>
+        <button class="btn btn-ghost" style="flex: 1;" onclick="closeOrderModal()">إلغاء</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add/Edit Product Modal -->
+  <div id="product-modal" class="modal">
+    <div class="modal-content card" style="max-width: 500px;">
+      <h3 id="modal-title" style="margin-bottom: 20px;">إضافة منتج</h3>
+      <form id="product-form">
+        <input type="hidden" id="prod-id">
+        <div class="form-group">
+          <label>اسم المنتج (مثل: Netflix Premium)</label>
+          <input type="text" id="prod-name" required dir="ltr">
+        </div>
+        <div class="form-group">
+          <label>صورة المنتج (اختياري، ستعوض الرمز واللون إذا وجدت)</label>
+          <input type="file" id="prod-image" accept="image/*">
+          <input type="hidden" id="prod-image-url">
+          <div id="image-preview" style="margin-top: 10px; max-width: 100px;"></div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <div class="form-group">
+            <label>الرمز (مثل: N)</label>
+            <input type="text" id="prod-symbol" required dir="ltr" maxlength="4">
+          </div>
+          <div class="form-group">
+            <label>لون الخلفية</label>
+            <input type="text" id="prod-color" required dir="ltr" placeholder="#E50914">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>الوصف بالعربية</label>
+          <textarea id="prod-desc-ar" required></textarea>
+        </div>
+        <div class="form-group">
+          <label>الوصف بالفرنسية</label>
+          <textarea id="prod-desc-fr" required dir="ltr"></textarea>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <div class="form-group">
+            <label>السعر (بالدينار)</label>
+            <input type="number" id="prod-price" required dir="ltr">
+          </div>
+          <div class="form-group">
+            <label>المدة</label>
+            <input type="text" id="prod-period" value="شهر واحد" required>
+          </div>
+        </div>
+        <div class="form-group" style="display: flex; align-items: center; gap: 10px;">
+          <input type="checkbox" id="prod-active" checked style="width: auto;">
+          <label for="prod-active" style="margin: 0;">متاح للبيع (Active)</label>
+        </div>
+        <div style="display: flex; gap: 10px; margin-top: 24px;">
+          <button type="submit" class="btn btn-primary" style="flex: 1;">حفظ</button>
+          <button type="button" id="btn-close-modal" class="btn btn-ghost" style="flex: 1;">إلغاء</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="admin.js"></script>
+</body>
+</html>

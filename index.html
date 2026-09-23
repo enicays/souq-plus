@@ -166,71 +166,7 @@
       </div>
 
       <div class="products-grid">
-
-        <div class="product-card">
-          <div class="mono" style="background:#FFFC00;">S+</div>
-          <h3>Snapchat+</h3>
-          <p class="desc" data-ar>أدوات حصرية، أيقونة مميزة، وأولوية في المشاهدة.</p>
-          <p class="desc" data-fr>Fonctions exclusives, badge spécial et priorité de visionnage.</p>
-          <div class="price-row">
-            <span class="price num">1200 <span style="font-size:0.85rem;">DA</span></span>
-            <span class="period"><span data-ar>شهر واحد</span><span data-fr>1 mois</span></span>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="mono" style="background:linear-gradient(135deg,#4285F4,#9B72CB);">G</div>
-          <h3>Gemini Pro</h3>
-          <p class="desc" data-ar>أقوى نموذج ذكاء اصطناعي من Google، بدون حدود يومية.</p>
-          <p class="desc" data-fr>Le modèle IA le plus puissant de Google, sans limite quotidienne.</p>
-          <div class="price-row">
-            <span class="price num">2500 <span style="font-size:0.85rem;">DA</span></span>
-            <span class="period"><span data-ar>شهر واحد</span><span data-fr>1 mois</span></span>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="mono" style="background:#E50914;">N</div>
-          <h3>Netflix Premium</h3>
-          <p class="desc" data-ar>أفلام ومسلسلات بجودة 4K، على عدة شاشات.</p>
-          <p class="desc" data-fr>Films et séries en 4K, sur plusieurs écrans.</p>
-          <div class="price-row">
-            <span class="price num">1800 <span style="font-size:0.85rem;">DA</span></span>
-            <span class="period"><span data-ar>شهر واحد</span><span data-fr>1 mois</span></span>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="mono" style="background:#1DB954;">S</div>
-          <h3>Spotify Premium</h3>
-          <p class="desc" data-ar>موسيقى بدون إعلانات وتحميل بلا انترنت.</p>
-          <p class="desc" data-fr>Musique sans publicité et écoute hors-ligne.</p>
-          <div class="price-row">
-            <span class="price num">1000 <span style="font-size:0.85rem;">DA</span></span>
-            <span class="period"><span data-ar>شهر واحد</span><span data-fr>1 mois</span></span>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="mono" style="background:#10A37F;">AI</div>
-          <h3>ChatGPT Plus</h3>
-          <p class="desc" data-ar>أقوى مساعد ذكاء اصطناعي، أولوية في السرعة والنماذج الجديدة.</p>
-          <p class="desc" data-fr>L'assistant IA le plus performant, accès prioritaire aux nouveaux modèles.</p>
-          <div class="price-row">
-            <span class="price num">3000 <span style="font-size:0.85rem;">DA</span></span>
-            <span class="period"><span data-ar>شهر واحد</span><span data-fr>1 mois</span></span>
-          </div>
-        </div>
-
-        <div class="product-card"
-          style="justify-content:center;align-items:center;text-align:center;border-style:dashed;">
-          <p class="desc" data-ar>ما لقيتيش الاشتراك يلي تحبو؟ راسلنا وحنا نشوفولك.</p>
-          <p class="desc" data-fr>Vous ne trouvez pas l'abonnement que vous cherchez ? Contactez-nous.</p>
-          <a href="https://wa.me/213000000000" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">
-            <span data-ar>راسلنا</span><span data-fr>Nous écrire</span>
-          </a>
-        </div>
-
+        <!-- Products are injected here dynamically by script.js -->
       </div>
       <p class="price-note" data-ar>* الأسعار تقديرية، تقدر تبدّلها حسب التعريفة الحالية.</p>
       <p class="price-note" data-fr>* Prix indicatifs — à ajuster selon vos tarifs actuels.</p>
@@ -418,7 +354,46 @@
     </div>
   </footer>
 
-  <script src="script.js" defer></script>
+  <!-- Checkout Modal -->
+  <div id="checkout-modal" class="modal" aria-hidden="true">
+    <div class="modal-content card" style="max-width: 500px; width: 100%; margin: 20px auto; padding: 30px; position: relative;">
+      <button id="close-checkout" style="position: absolute; top: 20px; left: 20px; background: transparent; border: none; font-size: 1.5rem; color: var(--text-muted); cursor: pointer;">&times;</button>
+      
+      <div style="text-align: center; margin-bottom: 24px;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 8px;">اطلب اشتراكك الآن</h2>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">املأ معلوماتك وسنتواصل معك فورًا لإتمام التفعيل</p>
+      </div>
+
+      <form id="checkout-form">
+        <div class="form-group" style="margin-bottom: 16px;">
+          <label style="display: block; margin-bottom: 6px; font-size: 0.9rem;">الاسم الكامل للزبون *</label>
+          <input type="text" id="cust-name" required placeholder="أدخل الاسم الكامل" style="width: 100%; padding: 12px; background: var(--bg-2); border: 1px solid var(--border); border-radius: 8px; color: var(--text);">
+        </div>
+        
+        <div class="form-group" style="margin-bottom: 16px;">
+          <label style="display: block; margin-bottom: 6px; font-size: 0.9rem;">الولاية</label>
+          <input type="text" id="cust-wilaya" placeholder="أدخل الولاية" style="width: 100%; padding: 12px; background: var(--bg-2); border: 1px solid var(--border); border-radius: 8px; color: var(--text);">
+        </div>
+
+        <div class="form-group" style="margin-bottom: 16px;">
+          <label style="display: block; margin-bottom: 6px; font-size: 0.9rem;">رقم الهاتف (الجزائر فقط) *</label>
+          <input type="tel" id="cust-phone" required pattern="^(05|06|07)[0-9]{8}$" placeholder="أدخل رقم الهاتف 05 أو 06 أو 07" dir="ltr" style="width: 100%; padding: 12px; background: var(--bg-2); border: 1px solid var(--border); border-radius: 8px; color: var(--text); text-align: left;" title="يجب أن يتكون من 10 أرقام ويبدأ بـ 05 أو 06 أو 07 فقط">
+          <small style="color: var(--text-muted); font-size: 0.8rem; display: block; margin-top: 4px;">يجب أن يتكون من 10 أرقام ويبدأ بـ 05 أو 06 أو 07 فقط</small>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 24px;">
+          <label style="display: block; margin-bottom: 6px; font-size: 0.9rem;">اختر اشتراكك *</label>
+          <select id="cust-product" required style="width: 100%; padding: 12px; background: var(--bg-2); border: 1px solid var(--border); border-radius: 8px; color: var(--text); cursor: pointer;">
+            <!-- Options dynamically loaded from Firebase -->
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block" id="btn-submit-order" style="width: 100%; font-size: 1.05rem;">تأكيد الطلب</button>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="script.js" defer></script>
 </body>
 
 </html>
